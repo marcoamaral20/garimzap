@@ -225,6 +225,8 @@ For the MVP, deterministic strategies are enough:
 - Regex strategy for prices, contacts, bedrooms, and common location patterns.
 - Business rules strategy for strict listing creation decisions.
 
+The release candidate keeps one concrete real estate parser implementation and does not introduce a parser registry yet. A registry or plugin-style parser selection should be added only when there are at least two real parser implementations to coordinate.
+
 Future LLM-based extraction should be treated as another strategy, not as a replacement for the parser architecture. AI can enhance extraction or classify ambiguous cases, but the pipeline should still produce the same parser result shape.
 
 ## 6. Queue Processing

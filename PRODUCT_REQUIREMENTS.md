@@ -285,15 +285,15 @@ Future versions may include:
 - Multi-tenant SaaS capabilities.
 - Alerts and notifications.
 
-## 15. Open Questions for Architecture Step
+## 15. MVP Planning Decisions
 
-The following questions should be answered during the architecture design phase:
+The architecture and roadmap phases resolved the initial planning questions:
 
-- What module boundaries should the modular monolith use?
-- How should parser strategies be registered and selected?
-- What is the exact database schema for raw messages, parser results, and property listings?
-- How should processing status and retries be modeled?
-- How should idempotency be handled for duplicate incoming messages?
-- Which ORM or query builder should be used with PostgreSQL?
-- How should API contracts be documented and validated?
-- What test strategy should cover parsers, use cases, queues, and APIs?
+- The MVP is a modular monolith with `messages`, `processing`, `parser`, `property-listings`, `statistics`, and `shared` modules.
+- The parser is deterministic and currently focused on one real estate parser implementation.
+- Parser outcomes are stored as Parser Results and kept separate from the technical Raw Message lifecycle.
+- Property Listings are created only when strict required fields are detected.
+- PostgreSQL is accessed through Drizzle ORM and node-postgres.
+- Redis and BullMQ provide asynchronous processing.
+- REST APIs expose raw messages, property listings, filters, and statistics.
+- Tests cover ingestion, processing, parser outcomes, listing creation, filters, statistics, and the release demo flow.
