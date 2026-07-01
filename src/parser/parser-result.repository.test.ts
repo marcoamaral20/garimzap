@@ -8,7 +8,7 @@ import { runMigrations } from "../shared/database/migrate";
 import { createPostgresParserResultRepository } from "./parser-result.repository";
 
 const databaseUrl =
-  process.env.DATABASE_URL ?? "postgresql://garimzap:garimzap@localhost:5432/garimzap";
+  process.env.DATABASE_URL ?? "postgresql://entrelinhas:entrelinhas@localhost:5432/entrelinhas";
 
 describe("parser result repository", () => {
   const database = createDatabase(databaseUrl);

@@ -1,6 +1,6 @@
-# Contributing to Garimzap
+# Contributing to Entrelinhas
 
-Garimzap is an architecture-focused MVP. Contributions should preserve the product philosophy: deterministic first, provider agnostic, backend focused, and honest about current limitations.
+Entrelinhas is an architecture-focused MVP. Contributions should preserve the product philosophy: deterministic first, provider agnostic, backend focused, and honest about current limitations.
 
 ## Project Philosophy
 

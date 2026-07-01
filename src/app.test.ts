@@ -6,7 +6,7 @@ describe("GET /health", () => {
   it("returns minimal service health with the current environment", async () => {
     const app = buildApp({
       config: {
-        databaseUrl: "postgresql://garimzap:garimzap@localhost:5432/garimzap",
+        databaseUrl: "postgresql://entrelinhas:entrelinhas@localhost:5432/entrelinhas",
         host: "127.0.0.1",
         logLevel: "silent",
         nodeEnv: "test",

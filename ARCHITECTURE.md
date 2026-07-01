@@ -1,8 +1,8 @@
-# Garimzap Architecture
+# Entrelinhas Architecture
 
 ## 1. Architectural Goals
 
-Garimzap should be designed as a backend-first, provider-agnostic, modular monolith that validates the complete message processing pipeline before expanding into multiple providers, domains, or AI-assisted features.
+Entrelinhas should be designed as a backend-first, provider-agnostic, modular monolith that validates the complete message processing pipeline before expanding into multiple providers, domains, or AI-assisted features.
 
 This architecture is appropriate for the MVP because the hard problem is not distributed scale yet. The hard problem is preserving clean boundaries while moving a message through ingestion, persistence, asynchronous processing, deterministic parsing, structured data creation, and query APIs. A modular monolith lets the project demonstrate serious engineering discipline without introducing unnecessary service orchestration, network boundaries, deployment complexity, or premature platform abstractions.
 
@@ -16,7 +16,7 @@ The architecture optimizes for:
 - Reliable asynchronous processing.
 - Future SaaS evolution without early SaaS complexity.
 
-The main trade-off is that the MVP keeps everything in one deployable backend application. This is intentional. It reduces operational complexity, but it requires disciplined module boundaries so the codebase does not collapse into a loosely organized application layer. If Garimzap later needs independent scaling, some modules can become separate services after their contracts are proven.
+The main trade-off is that the MVP keeps everything in one deployable backend application. This is intentional. It reduces operational complexity, but it requires disciplined module boundaries so the codebase does not collapse into a loosely organized application layer. If Entrelinhas later needs independent scaling, some modules can become separate services after their contracts are proven.
 
 ## 2. High-Level Architecture
 
@@ -78,7 +78,7 @@ The REST API exposes raw messages, property listings, and statistics to external
 
 ## 3. Module Organization
 
-Garimzap should be organized as a modular monolith. Modules should communicate through explicit application services, ports, or public contracts rather than reaching into each other's internals.
+Entrelinhas should be organized as a modular monolith. Modules should communicate through explicit application services, ports, or public contracts rather than reaching into each other's internals.
 
 ### messages
 
@@ -308,7 +308,7 @@ The MVP architecture should make future expansion possible without pretending th
 
 ### Provider Adapters
 
-WhatsApp Business API, Meta Cloud API, Evolution API, Z-API, Telegram, Discord, and Slack can be added later as adapter modules that translate provider-specific payloads into Garimzap's normalized incoming message model.
+WhatsApp Business API, Meta Cloud API, Evolution API, Z-API, Telegram, Discord, and Slack can be added later as adapter modules that translate provider-specific payloads into Entrelinhas's normalized incoming message model.
 
 The core pipeline should not change when a new provider is added.
 
@@ -336,7 +336,7 @@ If future scale requires it, provider adapters, workers, or domain parsers could
 
 ### ADR-001: Provider-Agnostic Webhook
 
-Decision: The MVP accepts Garimzap's normalized incoming message payload instead of integrating with a specific messaging provider.
+Decision: The MVP accepts Entrelinhas's normalized incoming message payload instead of integrating with a specific messaging provider.
 
 Why: The MVP goal is to validate the core processing architecture, not provider integration complexity.
 
@@ -374,7 +374,7 @@ Drawbacks:
 
 Decision: The MVP parser uses deterministic strategies such as keyword matching, regex, and business rules.
 
-Why: The product philosophy is that AI should enhance Garimzap later, not make version one work.
+Why: The product philosophy is that AI should enhance Entrelinhas later, not make version one work.
 
 Benefits:
 
@@ -424,7 +424,7 @@ Drawbacks:
 
 ### ADR-006: Modular Monolith
 
-Decision: Garimzap starts as a modular monolith rather than a set of microservices.
+Decision: Entrelinhas starts as a modular monolith rather than a set of microservices.
 
 Why: The MVP needs clean boundaries, not distributed deployment complexity.
 

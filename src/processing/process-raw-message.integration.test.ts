@@ -10,7 +10,7 @@ import { runMigrations } from "../shared/database/migrate";
 import { processRawMessage } from "./process-raw-message";
 
 const databaseUrl =
-  process.env.DATABASE_URL ?? "postgresql://garimzap:garimzap@localhost:5432/garimzap";
+  process.env.DATABASE_URL ?? "postgresql://entrelinhas:entrelinhas@localhost:5432/entrelinhas";
 
 describe("processRawMessage integration", () => {
   const database = createDatabase(databaseUrl);

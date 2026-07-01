@@ -1,7 +1,10 @@
 import { z } from "zod";
 
 const configSchema = z.object({
-  DATABASE_URL: z.string().url().default("postgresql://garimzap:garimzap@localhost:5432/garimzap"),
+  DATABASE_URL: z
+    .string()
+    .url()
+    .default("postgresql://entrelinhas:entrelinhas@localhost:5432/entrelinhas"),
   HOST: z.string().min(1).default("0.0.0.0"),
   LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]).default("info"),
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),

@@ -1,4 +1,4 @@
-# Garimzap Development Roadmap
+# Entrelinhas Development Roadmap
 
 This roadmap breaks the MVP into incremental milestones. Each milestone should produce a working, demonstrable system and increase the product's capabilities.
 
@@ -14,7 +14,7 @@ The roadmap avoids multi-domain support, provider integrations, authentication, 
 
 Deliver a runnable backend foundation that proves the project can be started, configured, observed at a basic level, and safely extended in later milestones.
 
-From a product perspective, this milestone does not extract business data yet. Its value is confidence: contributors and reviewers should be able to run Garimzap locally and see that the backend has a stable starting point.
+From a product perspective, this milestone does not extract business data yet. Its value is confidence: contributors and reviewers should be able to run Entrelinhas locally and see that the backend has a stable starting point.
 
 ### Why Now?
 
@@ -59,7 +59,7 @@ This milestone should stay intentionally small. The goal is not to build a platf
 
 ### Goal
 
-Deliver the first real product capability: Garimzap can receive provider-agnostic messages, persist them as raw messages, and expose them through a query API.
+Deliver the first real product capability: Entrelinhas can receive provider-agnostic messages, persist them as raw messages, and expose them through a query API.
 
 At the end of this milestone, a user should be able to send a real estate-style message to the backend and retrieve the stored raw message.
 
@@ -67,7 +67,7 @@ At the end of this milestone, a user should be able to send a real estate-style 
 
 The approved PRD states that every raw message must be persisted before processing. This milestone establishes the system of record before introducing asynchronous workers or parsing. It also validates the provider-agnostic contract that protects the core application from external messaging providers.
 
-This is the first milestone that demonstrates Garimzap's core product direction: chat content enters the system and becomes queryable backend data.
+This is the first milestone that demonstrates Entrelinhas's core product direction: chat content enters the system and becomes queryable backend data.
 
 ### Features
 
@@ -112,7 +112,7 @@ At the end of this milestone, a submitted message should be accepted, persisted,
 
 The architecture requires heavy processing to stay out of the webhook request cycle. Before adding parser behavior, the system needs to prove that messages can flow asynchronously with observable status, retry behavior, failure handling, and idempotency.
 
-This milestone turns Garimzap from a storage API into a pipeline.
+This milestone turns Entrelinhas from a storage API into a pipeline.
 
 ### Features
 
@@ -149,13 +149,13 @@ This milestone turns Garimzap from a storage API into a pipeline.
 
 ### Goal
 
-Deliver the core MVP intelligence: Garimzap can process real estate messages, produce parser results, and create structured property listings only when the strict quality rules are satisfied.
+Deliver the core MVP intelligence: Entrelinhas can process real estate messages, produce parser results, and create structured property listings only when the strict quality rules are satisfied.
 
 At the end of this milestone, the sample PRD message should become a structured property listing.
 
 ### Why Now?
 
-Once ingestion and asynchronous processing are reliable, the next product leap is extraction. This is where Garimzap starts solving the business problem: useful real estate opportunities stop being trapped in chat text and become structured data.
+Once ingestion and asynchronous processing are reliable, the next product leap is extraction. This is where Entrelinhas starts solving the business problem: useful real estate opportunities stop being trapped in chat text and become structured data.
 
 This milestone should prove the deterministic parser philosophy without adding AI or multiple domains.
 
@@ -203,7 +203,7 @@ This milestone should prove the deterministic parser philosophy without adding A
 
 Deliver the backend as a usable product API. Consumers should be able to query extracted property listings, filter them, and inspect basic processing and extraction statistics.
 
-At the end of this milestone, Garimzap should be useful to a future dashboard or external API consumer.
+At the end of this milestone, Entrelinhas should be useful to a future dashboard or external API consumer.
 
 ### Why Now?
 
@@ -255,7 +255,7 @@ It also validates whether the earlier parser decisions produce the metrics neede
 
 ### Goal
 
-Prepare Garimzap for public release as a serious open-source backend project suitable for a LinkedIn technical publication and senior engineering portfolio review.
+Prepare Entrelinhas for public release as a serious open-source backend project suitable for a LinkedIn technical publication and senior engineering portfolio review.
 
 At the end of this milestone, the repository should be clear, demonstrable, tested, documented, and honest about its trade-offs and limitations.
 

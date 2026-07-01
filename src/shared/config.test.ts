@@ -7,7 +7,7 @@ describe("loadConfig", () => {
     const config = loadConfig({});
 
     expect(config).toEqual({
-      databaseUrl: "postgresql://garimzap:garimzap@localhost:5432/garimzap",
+      databaseUrl: "postgresql://entrelinhas:entrelinhas@localhost:5432/entrelinhas",
       host: "0.0.0.0",
       logLevel: "info",
       nodeEnv: "development",

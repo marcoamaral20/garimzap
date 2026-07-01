@@ -10,7 +10,7 @@ import { runMigrations } from "./shared/database/migrate";
 import { createPostgresStatisticsRepository } from "./statistics/statistics.repository";
 
 const databaseUrl =
-  process.env.DATABASE_URL ?? "postgresql://garimzap:garimzap@localhost:5432/garimzap";
+  process.env.DATABASE_URL ?? "postgresql://entrelinhas:entrelinhas@localhost:5432/entrelinhas";
 
 describe("MVP release flow", () => {
   const database = createDatabase(databaseUrl);

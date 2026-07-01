@@ -1,10 +1,10 @@
-# Garimzap
+# Entrelinhas
 
-Garimzap transforma conversas de grupos no estilo WhatsApp em dados de negócio estruturados.
+Entrelinhas transforma conversas de grupos no estilo WhatsApp em dados de negócio estruturados.
 
 O MVP foca em um problema concreto: oportunidades imobiliárias que desaparecem no histórico de grupos. Corretores, imobiliárias, investidores e operadores gastam tempo procurando mensagens antigas para encontrar imóveis, preços, bairros, cidades e contatos publicados de forma informal.
 
-Garimzap captura essas mensagens, processa tudo de forma assíncrona, aplica regras determinísticas de parsing e expõe os imóveis extraídos por meio de APIs REST.
+Entrelinhas captura essas mensagens, processa tudo de forma assíncrona, aplica regras determinísticas de parsing e expõe os imóveis extraídos por meio de APIs REST.
 
 Este projeto é intencionalmente backend-first. Ele demonstra uma arquitetura realista de monólito modular com TypeScript, Fastify, PostgreSQL, Redis, BullMQ, parsers determinísticos e fronteiras claras entre módulos.
 
@@ -24,7 +24,7 @@ R$ 320.000
 Contato: (43) 99999-9999
 ```
 
-Garimzap converte isso em dado estruturado:
+Entrelinhas converte isso em dado estruturado:
 
 ```json
 {
@@ -109,7 +109,7 @@ flowchart TD
   K --> L
 ```
 
-Garimzap é um monólito modular. A fronteira mais importante não é a separação em processos; é a separação de responsabilidades.
+Entrelinhas é um monólito modular. A fronteira mais importante não é a separação em processos; é a separação de responsabilidades.
 
 | Módulo              | Responsabilidade                                                                               |
 | ------------------- | ---------------------------------------------------------------------------------------------- |
@@ -323,18 +323,18 @@ Scripts úteis:
 
 ## Limitações Atuais
 
-Este é um candidato a release MVP, não um SaaS completo.
+Este é um MVP pronto para demonstração, não um SaaS completo.
 
-- Imobiliário é o único domínio suportado.
-- O vocabulário do parser é intencionalmente pequeno e focado em português.
-- O parsing é determinístico; nenhuma IA é usada.
-- Não há autenticação nem autorização.
-- Não há adapters para WhatsApp, Telegram, Discord ou Slack.
-- Não há dashboard frontend.
-- Não há paginação, ordenação, busca textual, busca semântica, filtros salvos ou alertas.
-- Não há multi-tenancy nem cobrança.
-- Não há automação de deploy em produção.
-- Não há índices de banco além das restrições necessárias para a corretude do MVP.
+- Hoje, o projeto cobre apenas o domínio imobiliário.
+- O vocabulário do parser ainda é pequeno e focado em mensagens em português do Brasil.
+- O parser é determinístico: não usa IA.
+- Ainda não há autenticação ou autorização.
+- Ainda não existem adaptadores para WhatsApp, Telegram, Discord ou Slack.
+- Ainda não há dashboard web.
+- Ainda não há paginação, ordenação, busca textual, busca semântica, filtros salvos ou alertas.
+- Ainda não há suporte a multi-tenancy ou cobrança.
+- Ainda não há automação de deploy para produção.
+- O banco ainda não possui índices pensados para performance em escala; há apenas as restrições necessárias para a corretude do MVP.
 
 ## Roadmap
 

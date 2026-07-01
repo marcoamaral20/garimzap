@@ -1,8 +1,8 @@
-# Garimzap Product Requirements
+# Entrelinhas Product Requirements
 
 ## 1. Product Summary
 
-Garimzap is a backend platform that transforms high-volume group chat messages into structured business information.
+Entrelinhas is a backend platform that transforms high-volume group chat messages into structured business information.
 
 The first version focuses exclusively on real estate listings shared in WhatsApp-style groups. The goal is to validate the message ingestion, asynchronous processing, deterministic parsing, structured persistence, and query API pipeline without depending on AI or any specific messaging provider.
 
@@ -26,7 +26,7 @@ These messages usually contain useful structured data, such as:
 
 Today this information is difficult to search, filter, aggregate, or analyze because it remains trapped in chat history.
 
-Garimzap should convert these messages into structured records that can later power search, dashboards, alerts, analytics, and integrations.
+Entrelinhas should convert these messages into structured records that can later power search, dashboards, alerts, analytics, and integrations.
 
 ## 3. MVP Scope
 
@@ -77,7 +77,7 @@ R$ 320.000
 Contato: (43) 99999-9999
 ```
 
-Garimzap receives this message through its webhook, stores the raw message, sends it to asynchronous processing, classifies it as a real estate message, extracts structured fields, and persists a `Property Listing` that can be queried by API.
+Entrelinhas receives this message through its webhook, stores the raw message, sends it to asynchronous processing, classifies it as a real estate message, extracts structured fields, and persists a `Property Listing` that can be queried by API.
 
 ## 6. Incoming Message Contract
 
@@ -110,7 +110,7 @@ A `Property Listing` should only be created when the parser can identify all req
 - Location, such as city, neighborhood, or equivalent local reference.
 - Explicit price.
 
-If a message appears to be related to real estate but does not satisfy the minimum requirements, Garimzap should:
+If a message appears to be related to real estate but does not satisfy the minimum requirements, Entrelinhas should:
 
 - Store the raw message.
 - Mark the parser result as an `Unstructured Real Estate Message`.
@@ -235,7 +235,7 @@ The MVP is successful if it demonstrates:
 
 ### Provider-Agnostic Webhook First
 
-Garimzap will start with its own normalized webhook payload instead of integrating directly with WhatsApp providers.
+Entrelinhas will start with its own normalized webhook payload instead of integrating directly with WhatsApp providers.
 
 This makes the project easier to run, test, document, and contribute to. The cost is that the MVP does not prove a production WhatsApp integration yet.
 

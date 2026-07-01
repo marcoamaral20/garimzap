@@ -2,9 +2,9 @@ services:
   postgres:
     image: postgres:17-alpine
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-garimzap}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-garimzap}
-      POSTGRES_DB: ${POSTGRES_DB:-garimzap}
+      POSTGRES_USER: ${POSTGRES_USER:-entrelinhas}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-entrelinhas}
+      POSTGRES_DB: ${POSTGRES_DB:-entrelinhas}
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
     volumes:

@@ -24,7 +24,7 @@ async function start() {
       port: config.port,
     });
   } catch (error) {
-    app.log.error(error, "Failed to start Garimzap");
+    app.log.error(error, "Failed to start Entrelinhas");
     process.exitCode = 1;
   }
 }

@@ -1,4 +1,4 @@
-# Garimzap Demo Guide
+# Entrelinhas Demo Guide
 
 This guide describes a five-minute demonstration of the MVP release candidate.
 
